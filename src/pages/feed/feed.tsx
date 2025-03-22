@@ -8,7 +8,6 @@ import {
   selectOrders
 } from '../../services/slices/feed/feed-slice';
 import { getFeed } from '../../services/slices/feed/feed-thunks';
-import { getUserOrders } from '../../services/slices/order/orders-thunks';
 
 export const Feed: FC = () => {
   /** TODO: взять переменную из стора */
@@ -18,7 +17,6 @@ export const Feed: FC = () => {
 
   useEffect(() => {
     dispatch(getFeed());
-    dispatch(getUserOrders());
   }, []);
 
   if (!orders?.length || isLoading) {
